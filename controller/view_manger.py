@@ -14,10 +14,7 @@ from controller.settings_controller import SettingsController
 class ViewManager:
     def __init__(self, root):
         self.root = root
-
-        self.initialize_menu()
-
-    
+        self.initialize_menu()    
 
     # def create_ui(self):
     #     self.main_frame = tk.Frame(self.root)

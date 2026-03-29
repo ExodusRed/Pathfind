@@ -12,9 +12,7 @@ class MainView(tk.Frame):
 
         self.coords = None # should go into diagram
 
-        self.create_ui()
-
-        
+        self.create_ui()       
 
         print("MainMenuView Inititalized.")
 
@@ -27,14 +25,14 @@ class MainView(tk.Frame):
         main_frame = tk.Frame(self.root, bg="black", border=0)
         # toolbar = tk.Frame(main_frame, bg="grey12")
 
-        toolbar_view = ToolbarView(self)
+        toolbar_view = ToolbarView(main_frame)
         
         # Toolbar buttons
-        add_node_button = tk.Button(
-            toolbar_view,
-            text="Add Node",
-            command=lambda mode="add_node": self.controller.set_mode(mode)
-        )
+        # add_node_button = tk.Button(
+        #     toolbar_view,
+        #     text="Add Node",
+        #     command=lambda mode="add_node": self.controller.set_mode(mode)
+        # )
 
         # self.canvas = tk.Canvas(main_frame, bg="black", width=800, height=600)
 
@@ -53,25 +51,12 @@ class MainView(tk.Frame):
 
         # self.canvas.bind("<Motion>", self.motion)
         self.diagram.bind("<Motion>", self.motion)
-
-
-        # Packing on screen
-
-        # main_frame.pack(fill="both") # , anchor="center"
-        # toolbar.pack(fill="x")
-        # toolbar_view.pack(fill="both", expand=True)
-        # add_node_button.pack(pady=10)
-        # self.canvas.pack(fill="both")
-
-        # self.diagram.pack(fill="both")
-        # self.coords_label.pack(fill="both")
-
-        # start
         
         main_frame.grid(column=0, row=0)
-        toolbar_view.grid()
-        add_node_button.grid()
-        self.diagram.grid()
+        toolbar_view.grid(column=0, row=0, sticky="we")
+        # add_node_button.grid(column=0, row=2)
+        self.diagram.grid(column=0, row=2)
+
 
     def set_mode(self, mode):
         self.controller.set_mode(mode)
