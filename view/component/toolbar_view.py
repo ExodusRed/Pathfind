@@ -16,7 +16,11 @@ class ToolbarView(tk.Frame):
 
         algo_selector = tk.OptionMenu(master=self, variable=algo_selection, value=algo_options[0])
         algo_selection = tk.StringVar(algo_selector)
-        algo_selection.set(algo_options[0])
+        # algo_selection.set(algo_options[0])
+        # algo_selection.set(algo_options[0])
+        # algo_selection.
+        # self.config(algo_see)
+        algo_selector.setvar(algo_selection.get(), value=algo_selection)
         self.config(width=100, height=100, bg="grey12")
 
         start_button = tk.Button(button_frame, text="Start", fg="green")
@@ -32,6 +36,8 @@ class ToolbarView(tk.Frame):
         end_button.grid()
 
         algo_selector.grid()
+
+        self.update()
         
 
     class AlgoSelector(tk.Frame):

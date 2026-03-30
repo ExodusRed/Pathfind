@@ -43,7 +43,8 @@ class MainView(tk.Frame):
             bg="black"
         )
 
-        self.diagram.create_grid(100)
+        # self.diagram.create_grid(100)
+
 
         self.coords_label = tk.Label(main_frame, text="(0, 0)")
 
